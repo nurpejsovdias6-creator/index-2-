@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадьба Огузка и Кати — Ресторан «Claude Monet»</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display, Great Vibes, Cormorant Garamond, Cinzel, Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FFFFFF',
+                            100: '#FAF9F6',
+                            200: '#F4F1EA',
+                            300: '#EFECE6',
+                        },
+                        gold: {
+                            100: '#FFF8E7',
+                            200: '#F4E3B1',
+                            300: '#E6CB7E',
+                            400: '#DAB855',
+                            500: '#D4AF37', // Rich Gold
+                            600: '#C5A059',
+                            700: '#B8860B',
+                            800: '#8C6511',
+                            900: '#5C4105'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        garamond: ['"Cormorant Garamond"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FAF9F6;
+            color: #332B19;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Gold Gradient Text */
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 40%, #C5A059 70%, #8C6511 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Soft Gold Glow Effects */
+        .gold-border-glow {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15), 0 0 15px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Premium Gold Double Frame */
+        .gold-frame {
+            border: 2px solid #D4AF37;
+            position: relative;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        .gold-frame::before {
+            content: '';
+            position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            pointer-events: none;
+        }
+
+        /* Vinyl Record Rotation Animation */
+        @keyframes spinSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spinSlow 8s linear infinite;
+        }
+        .paused {
+            animation-play-state: paused !important;
+        }
+
+        /* Equalizer Animation Bars */
+        .eq-bar {
+            width: 3px;
+            background: #D4AF37;
+            border-radius: 2px;
+            animation: eqAnim 1.2s ease-in-out infinite alternate;
+        }
+        .eq-bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+        .eq-bar:nth-child(2) { height: 100%; animation-delay: 0.3s; }
+        .eq-bar:nth-child(3) { height: 40%; animation-delay: 0.2s; }
+        .eq-bar:nth-child(4) { height: 80%; animation-delay: 0.4s; }
+
+        @keyframes eqAnim {
+            0% { transform: scaleY(0.3); }
+            100% { transform: scaleY(1); }
+        }
+
+        /* Scroll Animation Fade-Up Classes */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(25px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative pb-32 bg-[#FAF9F6] text-stone-800">
+
+    <!-- Top Pattern Header -->
+    <header class="relative py-12 text-center border-b border-gold-300/60 bg-gradient-to-b from-white via-cream-100 to-cream-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="inline-block mb-3 px-6 py-1 border border-gold-500/60 rounded-full tracking-widest text-xs uppercase text-gold-800 font-semibold bg-white/70 shadow-sm">
+                Haute Cuisine & Grand Amour
+            </div>
+            <h1 class="font-cinzel text-3xl sm:text-5xl md:text-6xl gold-text-gradient tracking-wider font-bold mb-2">
+                CLAUDE MONET
+            </h1>
+            <p class="font-garamond italic text-gold-700 text-xl sm:text-2xl tracking-widest">
+                — Ресторан Французской Кухни —
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section class="relative py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto gold-frame p-8 sm:p-14 gold-border-glow rounded-xl shadow-xl relative">
+            <!-- Decorative Corners -->
+            <div class="absolute top-3 left-3 text-gold-500/60 font-serif text-xl">❖</div>
+            <div class="absolute top-3 right-3 text-gold-500/60 font-serif text-xl">❖</div>
+            <div class="absolute bottom-3 left-3 text-gold-500/60 font-serif text-xl">❖</div>
+            <div class="absolute bottom-3 right-3 text-gold-500/60 font-serif text-xl">❖</div>
+
+            <p class="text-gold-800 uppercase tracking-widest text-xs sm:text-sm font-semibold mb-4">
+                Свадебное Приглашение
+            </p>
+
+            <div class="my-6">
+                <span class="block font-cursive text-5xl sm:text-7xl text-gold-700 mb-1 drop-shadow-sm">Максим Лавров</span>
+                <span class="block font-garamond italic text-2xl text-gold-800 font-semibold">(Огузок)</span>
+                <span class="block font-cursive text-4xl text-gold-600 my-2">&amp;</span>
+                <span class="block font-cursive text-5xl sm:text-7xl text-gold-700 drop-shadow-sm">Екатерина Семенова</span>
+            </div>
+
+            <p class="font-garamond text-lg sm:text-xl text-stone-700 max-w-xl mx-auto italic mt-6 leading-relaxed">
+                «На кухне, как и в любви: главное — не пересолить, не согнать соус и вовремя сказать Шефу, что он прав... Но в этот вечер Шефом любви являемся Мы!»
+            </p>
+
+            <!-- Date Banner -->
+            <div class="mt-10 pt-6 border-t border-gold-300 flex flex-col sm:flex-row justify-center items-center gap-6 text-gold-800">
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-calendar-check text-gold-600 text-xl"></i>
+                    <span class="font-cinzel text-lg tracking-wider font-bold">27 ОКТЯБРЯ 2026</span>
+                </div>
+                <div class="hidden sm:block text-gold-400">•</div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-clock text-gold-600 text-xl"></i>
+                    <span class="font-cinzel text-lg tracking-wider font-bold">16:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="max-w-4xl mx-auto px-4 py-8 text-center fade-in-section">
+        <h3 class="font-cinzel text-xl text-gold-800 mb-6 tracking-widest uppercase font-bold">
+            До подачи главного шедевра осталось:
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto" id="countdown">
+            <div class="bg-white border-2 border-gold-400/60 p-4 rounded-xl shadow-md">
+                <span id="days" class="block font-cinzel text-3xl sm:text-4xl text-gold-700 font-bold">00</span>
+                <span class="text-xs uppercase text-stone-500 tracking-wider font-semibold">Дней</span>
+            </div>
+            <div class="bg-white border-2 border-gold-400/60 p-4 rounded-xl shadow-md">
+                <span id="hours" class="block font-cinzel text-3xl sm:text-4xl text-gold-700 font-bold">00</span>
+                <span class="text-xs uppercase text-stone-500 tracking-wider font-semibold">Часов</span>
+            </div>
+            <div class="bg-white border-2 border-gold-400/60 p-4 rounded-xl shadow-md">
+                <span id="minutes" class="block font-cinzel text-3xl sm:text-4xl text-gold-700 font-bold">00</span>
+                <span class="text-xs uppercase text-stone-500 tracking-wider font-semibold">Минут</span>
+            </div>
+            <div class="bg-white border-2 border-gold-400/60 p-4 rounded-xl shadow-md">
+                <span id="seconds" class="block font-cinzel text-3xl sm:text-4xl text-gold-700 font-bold">00</span>
+                <span class="text-xs uppercase text-stone-500 tracking-wider font-semibold">Секунд</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Barinov Quote Section -->
+    <section class="max-w-4xl mx-auto px-4 py-10 fade-in-section">
+        <div class="bg-white border-l-4 border-gold-500 p-6 sm:p-8 rounded-r-xl shadow-lg relative border-y border-r border-gold-200">
+            <i class="fa-solid fa-quote-left text-4xl text-gold-300/40 absolute top-4 right-4"></i>
+            <div class="flex flex-col sm:flex-row items-center gap-6">
+                <div class="w-24 h-24 rounded-full border-2 border-gold-500 p-1 bg-white shadow-md flex-shrink-0">
+                    <div class="w-full h-full rounded-full bg-cream-200 flex items-center justify-center text-gold-700 text-3xl font-serif">
+                        👨‍🍳
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-cinzel text-lg text-gold-800 font-bold mb-1">Слово Шеф-повара ресторана «Claude Monet»</h4>
+                    <p class="font-garamond italic text-stone-700 text-base sm:text-lg mb-3 leading-relaxed">
+                        «Слушай меня сюда, Огузок! Если ты испортишь этот банкет так же, как свой первый соус бешамель — уволю прямо у алтаря! А если серьёзно... Катя, как ты вообще согласилась? Инвалиды кухни тоже имеют право на счастье. Всех жду, лучшие блюда и шампанское за счет заведения!»
+                    </p>
+                    <span class="font-sans font-semibold text-xs text-gold-700 uppercase tracking-widest">— Виктор Петрович Баринов</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu & Program Section -->
+    <section class="max-w-4xl mx-auto px-4 py-10 fade-in-section">
+        <div class="text-center mb-10">
+            <h2 class="font-cinzel text-3xl gold-text-gradient font-bold tracking-wider mb-2">ПРОГРАММА ВЕЧЕРА &amp; МЕНЮ</h2>
+            <div class="w-24 h-0.5 bg-gold-400 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Schedule -->
+            <div class="bg-white border border-gold-300 p-6 sm:p-8 rounded-xl gold-border-glow">
+                <h3 class="font-cinzel text-xl text-gold-800 font-bold mb-6 flex items-center gap-3 border-b border-gold-200 pb-3">
+                    <i class="fa-solid fa-clock text-gold-600"></i> Расписание Мероприятия
+                </h3>
+                <ul class="space-y-5">
+                    <li class="flex items-start gap-4">
+                        <span class="font-cinzel text-gold-700 font-bold text-lg w-16">16:00</span>
+                        <div>
+                            <h5 class="text-stone-800 font-semibold">Сбор Гостей &amp; Аперитив</h5>
+                            <p class="text-xs text-stone-500 mt-0.5">Приветственный флейт шампанского, закуски от Сенек и Федей</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="font-cinzel text-gold-700 font-bold text-lg w-16">17:00</span>
+                        <div>
+                            <h5 class="text-stone-800 font-semibold">Свадебная Церемония</h5>
+                            <p class="text-xs text-stone-500 mt-0.5">Торжественная выездная регистрация в залах «Claude Monet»</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="font-cinzel text-gold-700 font-bold text-lg w-16">18:30</span>
+                        <div>
+                            <h5 class="text-stone-800 font-semibold">Праздничный Гала-Ужин</h5>
+                            <p class="text-xs text-stone-500 mt-0.5">Подача авторских блюд, поздравления и тосты от Кости и Насти</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="font-cinzel text-gold-700 font-bold text-lg w-16">21:00</span>
+                        <div>
+                            <h5 class="text-stone-800 font-semibold">Первый Танец &amp; Живая Музыка</h5>
+                            <p class="text-xs text-stone-500 mt-0.5">Танцы под культовые саундтреки из сериала «Кухня»</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Menu -->
+            <div class="bg-white border border-gold-300 p-6 sm:p-8 rounded-xl gold-border-glow">
+                <h3 class="font-cinzel text-xl text-gold-800 font-bold mb-6 flex items-center gap-3 border-b border-gold-200 pb-3">
+                    <i class="fa-solid fa-utensils text-gold-600"></i> Гастрономический Сет
+                </h3>
+                <ul class="space-y-4">
+                    <div>
+                        <h5 class="text-gold-800 font-bold font-garamond italic text-lg">Amuse-bouche</h5>
+                        <p class="text-xs text-stone-600">Знаменитый «Неподгоревший» крутон от Максима с трюфельным маслом</p>
+                    </div>
+                    <div>
+                        <h5 class="text-gold-800 font-bold font-garamond italic text-lg">Entrée</h5>
+                        <p class="text-xs text-stone-600">Тартар из лосося с авокадо и икрой под цитрусовым дрессингом</p>
+                    </div>
+                    <div>
+                        <h5 class="text-gold-800 font-bold font-garamond italic text-lg">Plat Principal</h5>
+                        <p class="text-xs text-stone-600">Утиная грудка sous-vide от Шефа под соусом из фламбированной вишни</p>
+                    </div>
+                    <div>
+                        <h5 class="text-gold-800 font-bold font-garamond italic text-lg">Dessert</h5>
+                        <p class="text-xs text-stone-600">Шоколадно-пассионный трехъярусный свадебный торт от Луи</p>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Card -->
+    <section class="max-w-4xl mx-auto px-4 py-8 fade-in-section">
+        <div class="bg-white border-2 border-gold-400/70 p-8 rounded-xl text-center shadow-lg gold-border-glow">
+            <h3 class="font-cinzel text-2xl text-gold-800 font-bold mb-2">МЕСТО ПРОВЕДЕНИЯ</h3>
+            <p class="text-gold-700 font-bold text-lg mb-3">
+                <i class="fa-solid fa-location-dot mr-2"></i>Ресторан «Claude Monet», г. Москва
+            </p>
+            <p class="text-sm text-stone-600 max-w-lg mx-auto leading-relaxed">
+                Адрес: ул. Спиридоновка, д. 25 (м. Баррикадная / Пушкинская).<br>
+                <span class="font-semibold text-gold-800">Дресс-код:</span> Элегантный вечерний стиль (Black Tie / White &amp; Gold accent).
+            </p>
+        </div>
+    </section>
+
+    <!-- RSVP Form -->
+    <section class="max-w-2xl mx-auto px-4 py-12 fade-in-section">
+        <div class="bg-white border-2 border-gold-400 p-8 rounded-2xl gold-border-glow shadow-2xl">
+            <h3 class="font-cinzel text-2xl text-gold-800 font-bold text-center mb-1">ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ</h3>
+            <p class="text-xs text-center text-stone-500 uppercase tracking-widest mb-6">Просим ответить до 10 октября 2026 года</p>
+
+            <form id="rsvpForm" class="space-y-5" onsubmit="handleRSVP(event)">
+                <div>
+                    <label class="block text-xs uppercase text-gold-800 font-bold mb-1.5">Ваше Имя и Фамилия</label>
+                    <input type="text" required placeholder="Например, Дмитрий Нагиев" class="w-full bg-cream-100 border border-gold-300 rounded-lg px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gold-800 font-bold mb-1.5">Сможете ли вы разделить с нами этот праздник?</label>
+                    <select class="w-full bg-cream-100 border border-gold-300 rounded-lg px-4 py-3 text-stone-800 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition">
+                        <option value="yes">С удовольствием приду!</option>
+                        <option value="couple">Приду с парой / +1</option>
+                        <option value="no">К сожалению, не смогу быть</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase text-gold-800 font-bold mb-1.5">Пожелания по напиткам / Меню</label>
+                    <input type="text" placeholder="Шампанское, Красное вино, Безалкогольное..." class="w-full bg-cream-100 border border-gold-300 rounded-lg px-4 py-3 text-stone-800 placeholder-stone-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition">
+                </div>
+                <button type="submit" class="w-full py-3.5 mt-2 bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-white font-bold uppercase tracking-wider rounded-lg shadow-md hover:brightness-105 active:scale-[0.99] transition duration-200">
+                    Подтвердить Участие
+                </button>
+            </form>
+
+            <div id="rsvpMessage" class="hidden mt-5 p-4 bg-gold-100 border border-gold-400 rounded-lg text-center text-gold-800 font-semibold text-sm">
+                ✨ Спасибо! Шеф лично внес вас в VIP-список гостей «Claude Monet»!
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Audio Player Bar (White & Gold Luxury) -->
+    <div id="playerBar" class="fixed bottom-0 left-0 right-0 z-50 bg-white/90 border-t-2 border-gold-400 backdrop-blur-md px-4 py-3 shadow-2xl">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+
+            <!-- Vinyl & Track Info -->
+            <div class="flex items-center gap-3 w-full md:w-auto justify-between md:justify-start">
+                <div class="flex items-center gap-3">
+                    <!-- Gold Vinyl Record -->
+                    <div class="relative w-12 h-12 flex-shrink-0">
+                        <div id="vinylDisk" class="w-12 h-12 rounded-full bg-gradient-to-tr from-stone-900 via-gold-800 to-stone-900 border-2 border-gold-400 flex items-center justify-center animate-spin-slow paused shadow-md">
+                            <div class="w-4 h-4 rounded-full bg-gold-400 flex items-center justify-center">
+                                <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden">
+                        <h4 id="trackTitle" class="text-sm font-bold text-stone-800 truncate max-w-[180px] sm:max-w-[240px]">Yma Sumac - Gopher Mambo</h4>
+                        <p id="trackStatus" class="text-[10px] text-gold-700 font-semibold uppercase tracking-wider flex items-center gap-1">
+                            <span>Саундтрек «Кухни»</span>
+                            <span id="synthBadge" class="hidden text-[9px] px-1.5 py-0.2 bg-gold-100 text-gold-800 border border-gold-300 rounded">Synth Mode</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Equalizer Animation -->
+                <div id="equalizer" class="flex items-end gap-1 h-5 px-2 opacity-30">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+            </div>
+
+            <!-- Central Controls -->
+            <div class="flex items-center gap-4">
+                <button onclick="prevTrack()" class="text-gold-700 hover:text-gold-900 text-lg transition active:scale-90 p-1" title="Предыдущий трек">
+                    <i class="fa-solid fa-backward-step"></i>
+                </button>
+                
+                <button onclick="togglePlay()" id="playBtn" class="w-11 h-11 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 text-white flex items-center justify-center font-bold shadow-md hover:scale-105 active:scale-95 transition">
+                    <i id="playIcon" class="fa-solid fa-play ml-0.5"></i>
+                </button>
+                
+                <button onclick="nextTrack()" class="text-gold-700 hover:text-gold-900 text-lg transition active:scale-90 p-1" title="Следующий трек">
+                    <i class="fa-solid fa-forward-step"></i>
+                </button>
+            </div>
+
+            <!-- Playlist & Volume Controls -->
+            <div class="flex items-center gap-3 w-full md:w-auto justify-end">
+                <i class="fa-solid fa-music text-gold-600 text-xs"></i>
+                <select id="playlistSelect" onchange="selectTrack(this.value)" class="bg-cream-100 border border-gold-300 text-stone-800 text-xs font-semibold rounded-md px-2 py-1.5 focus:outline-none focus:border-gold-500 max-w-[190px] truncate">
+                    <!-- Playlist generated in JS -->
+                </select>
+
+                <!-- Volume Slider -->
+                <div class="hidden sm:flex items-center gap-1.5 ml-2">
+                    <i class="fa-solid fa-volume-high text-gold-600 text-xs"></i>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.8" oninput="changeVolume(this.value)" class="w-16 accent-gold-500 cursor-pointer">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Hidden HTML5 Audio Element -->
+    <audio id="audioElement" preload="auto"></audio>
+
+    <script>
+        // --- OST Tracklist from "Kitchen" TV Series ---
+        const tracks = [
+            {
+                title: "Yma Sumac - Gopher Mambo",
+                src: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=mambo-funky-112662.mp3",
+                synthTone: "mambo"
+            },
+            {
+                title: "Irma - I Know",
+                src: "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=acoustic-guitars-ambient-18544.mp3",
+                synthTone: "acoustic"
+            },
+            {
+                title: "The Cardigans - Lovefool",
+                src: "https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f7e522.mp3?filename=pop-happy-feel-good-123498.mp3",
+                synthTone: "pop"
+            },
+            {
+                title: "Enya - Only Time (French Waltz Mix)",
+                src: "https://cdn.pixabay.com/download/audio/2021/09/06/audio_8b71d4ddb6.mp3?filename=french-accordion-waltz-6872.mp3",
+                synthTone: "waltz"
+            },
+            {
+                title: "L'Aura - Two",
+                src: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b184d0b1.mp3?filename=romantic-piano-ballad-10825.mp3",
+                synthTone: "ballad"
+            },
+            {
+                title: "Романтическая Мелодия Claude Monet",
+                src: "https://cdn.pixabay.com/download/audio/2022/08/02/audio_884fa92c21.mp3?filename=sweet-romantic-acoustic-116035.mp3",
+                synthTone: "rock"
+            }
+        ];
+
+        let currentTrackIndex = 0;
+        let isPlaying = false;
+        let synthMode = false;
+
+        const audio = document.getElementById('audioElement');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const vinylDisk = document.getElementById('vinylDisk');
+        const equalizer = document.getElementById('equalizer');
+        const trackTitle = document.getElementById('trackTitle');
+        const playlistSelect = document.getElementById('playlistSelect');
+        const synthBadge = document.getElementById('synthBadge');
+
+        // --- Web Audio API Synth Fallback Engine ---
+        let audioCtx = null;
+        let synthInterval = null;
+
+        function initSynthCtx() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playSynthMelody(type) {
+            initSynthCtx();
+            stopSynthMelody();
+            synthBadge.classList.remove('hidden');
+
+            const notes = type === 'waltz' ? [261.63, 329.63, 392.00, 523.25] : [220, 277.18, 329.63, 440];
+            let step = 0;
+
+            synthInterval = setInterval(() => {
+                if (!isPlaying) return;
+                try {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(notes[step % notes.length], audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.5);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.5);
+                    step++;
+                } catch(e) {}
+            }, 400);
+        }
+
+        function stopSynthMelody() {
+            if (synthInterval) clearInterval(synthInterval);
+            synthBadge.classList.add('hidden');
+        }
+
+        // --- Audio Control Logic ---
+        function initPlaylist() {
+            playlistSelect.innerHTML = '';
+            tracks.forEach((t, i) => {
+                const opt = document.createElement('option');
+                opt.value = i;
+                opt.textContent = `${i + 1}. ${t.title}`;
+                playlistSelect.appendChild(opt);
+            });
+            loadTrack(0);
+        }
+
+        function loadTrack(index) {
+            currentTrackIndex = index;
+            const track = tracks[currentTrackIndex];
+            trackTitle.textContent = track.title;
+            playlistSelect.value = index;
+
+            audio.src = track.src;
+            synthMode = false;
+            stopSynthMelody();
+
+            audio.onerror = () => {
+                console.warn('Audio stream fallback triggered.');
+                synthMode = true;
+                if (isPlaying) playSynthMelody(track.synthTone);
+            };
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                pauseTrack();
+            } else {
+                startTrack();
+            }
+        }
+
+        function startTrack() {
+            initSynthCtx();
+            if (synthMode) {
+                isPlaying = true;
+                playSynthMelody(tracks[currentTrackIndex].synthTone);
+                updateUIState(true);
+            } else {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    updateUIState(true);
+                }).catch(err => {
+                    synthMode = true;
+                    isPlaying = true;
+                    playSynthMelody(tracks[currentTrackIndex].synthTone);
+                    updateUIState(true);
+                });
+            }
+        }
+
+        function pauseTrack() {
+            isPlaying = false;
+            audio.pause();
+            stopSynthMelody();
+            updateUIState(false);
+        }
+
+        function updateUIState(playing) {
+            if (playing) {
+                playIcon.className = "fa-solid fa-pause";
+                vinylDisk.classList.remove('paused');
+                equalizer.classList.remove('opacity-30');
+            } else {
+                playIcon.className = "fa-solid fa-play ml-0.5";
+                vinylDisk.classList.add('paused');
+                equalizer.classList.add('opacity-30');
+            }
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+            loadTrack(currentTrackIndex);
+            if (isPlaying) startTrack();
+        }
+
+        function prevTrack() {
+            currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+            loadTrack(currentTrackIndex);
+            if (isPlaying) startTrack();
+        }
+
+        function selectTrack(val) {
+            loadTrack(parseInt(val));
+            startTrack();
+        }
+
+        function changeVolume(val) {
+            audio.volume = val;
+        }
+
+        audio.addEventListener('ended', () => {
+            nextTrack();
+        });
+
+        // --- Countdown Timer Logic ---
+        function updateCountdown() {
+            const weddingDate = new Date('October 27, 2026 16:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            }
+        }
+
+        // --- IntersectionObserver for Scroll Animations ---
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        function handleRSVP(e) {
+            e.preventDefault();
+            document.getElementById('rsvpForm').reset();
+            const msg = document.getElementById('rsvpMessage');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 5000);
+        }
+
+        window.onload = function() {
+            initPlaylist();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            setupScrollAnimations();
+        };
+    </script>
+</body>
+</html>
